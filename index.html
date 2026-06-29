@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あの日の教室へ、タイムスリップ。｜養哲塾八王子教室 同窓会2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        youtetsu: {
+                            red: '#C62E2E',    // あの椅子の赤
+                            amber: '#D97706',  // 夕暮れの光
+                            dark: '#1c1917',   // 黒板のような黒
+                            cream: '#FDFBF7'   // 思い出のノートの白
+                        }
+                    },
+                    fontFamily: {
+                        mincho: ['"Zen Old Mincho"', 'serif'],
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    </style>
+</head>
+<body class="bg-youtetsu-cream text-stone-800 font-sans leading-relaxed selection:bg-red-100 selection:text-red-800">
+
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-youtetsu-dark">
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105 hover:scale-100 opacity-60" style="background-image: url('youtetsu7-1024x576.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-youtetsu-dark via-youtetsu-dark/50 to-amber-950/40"></div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto fade-in">
+            <p class="text-amber-400 tracking-[0.3em] text-xs sm:text-sm font-medium mb-4 uppercase">
+                Yotetsu Juku Hachioji Reunion 2026
+            </p>
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-mincho text-white font-bold tracking-widest leading-tight mb-8 drop-shadow-md">
+                あの日の教室へ、<br class="sm:hidden">タイムスリップ。
+            </h1>
+            <p class="text-stone-300 text-sm sm:text-base md:text-lg mb-10 font-light max-w-xl mx-auto leading-relaxed">
+                チョークの舞う匂い。U字に並ぶ白い机。<br>
+                夕暮れまで粘った、あの赤い椅子。<br>
+                大人になった私たちが、もう一度あの場所に集う日。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" rel="noopener" class="w-full sm:w-auto bg-gradient-to-r from-youtetsu-red to-amber-600 hover:from-red-600 hover:to-amber-700 text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-red-900/30 transform hover:-translate-y-0.5 transition duration-300 text-center flex items-center justify-center gap-2">
+                    <span>参加申し込みをする</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <a href="#details" class="w-full sm:w-auto border border-white/30 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-full transition duration-300 text-center">
+                    詳細を見る
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-[10px] tracking-widest flex flex-col items-center gap-2 animate-bounce">
+            <span>SCROLL</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section class="bg-youtetsu-dark text-white py-8 border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-xs tracking-widest text-amber-400 mb-3"><i class="fa-regular fa-clock mr-1"></i> 開催まで、あと</p>
+            <div id="countdown" class="flex justify-center gap-4 sm:gap-8 font-mincho text-3xl sm:text-5xl text-stone-100">
+                </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 max-w-3xl mx-auto text-center">
+        <h2 class="text-xs tracking-widest text-youtetsu-red font-bold mb-3 uppercase">Concept</h2>
+        <h3 class="text-2xl sm:text-3xl font-mincho font-bold text-stone-800 mb-8">
+            歴代のOB・OG、全員集合。
+        </h3>
+        <p class="text-stone-600 leading-loose text-sm sm:text-base mb-6">
+            養哲塾八王子教室に通っていた、すべての人へ。<br>
+            世代を超えて「あの教室」というたった一つの共通点で繋がる、<br class="hidden sm:inline">一夜限りの大同窓会を開催します。
+        </p>
+        <p class="text-stone-600 leading-loose text-sm sm:text-base">
+            当時の思い出を語り合うもよし、近況を報告し合うもよし。<br>
+            ドレスコード等はいっさいありません。<br>
+            あの頃と同じように、過ごしやすい格好でふらりと遊びに来てください。
+        </p>
+    </section>
+
+    <section id="details" class="py-16 bg-stone-100/70 border-y border-stone-200 px-4">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl font-mincho font-bold text-stone-800">開催概要</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-stone-200/80 overflow-hidden divide-y divide-stone-100">
+                <div class="p-6 sm:p-8 flex flex-col sm:flex-row gap-2 sm:gap-8 items-start">
+                    <div class="sm:w-32 font-bold text-youtetsu-red flex items-center gap-2"><i class="fa-regular fa-calendar-days"></i> 日時</div>
+                    <div class="flex-1 font-medium text-lg text-stone-800">
+                        2026年10月3日（土）<br class="sm:hidden">
+                        <span class="text-2xl font-bold font-mincho text-youtetsu-dark">15:00 〜 18:00</span>
+                        <span class="text-xs text-stone-500 block mt-1">（14:30 受付開始）</span>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-8 flex flex-col sm:flex-row gap-2 sm:gap-8 items-start">
+                    <div class="sm:w-32 font-bold text-youtetsu-red flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> 会場</div>
+                    <div class="flex-1">
+                        <p class="font-bold text-lg text-stone-800 mb-1">養哲塾 八王子教室</p>
+                        <p class="text-sm text-stone-600 mb-3">〒192-0045 東京都八王子市大和田町3丁目21-19 アヴスナオビル</p>
+                        <div class="w-full h-48 rounded-lg overflow-hidden border border-stone-200 mt-2">
+                            <iframe src="https://maps.google.com/maps?q=東京都八王子市大和田町3丁目21-19+アヴスナオビル&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-8 flex flex-col sm:flex-row gap-2 sm:gap-8 items-start">
+                    <div class="sm:w-32 font-bold text-youtetsu-red flex items-center gap-2"><i class="fa-solid fa-yen-sign"></i> 会費</div>
+                    <div class="flex-1 font-medium">
+                        <span class="text-2xl font-bold text-stone-800">4,000円</span>
+                        <p class="text-xs text-stone-500 mt-1">※当日、受付にて現金でお支払いください。</p>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-8 flex flex-col sm:flex-row gap-2 sm:gap-8 items-start">
+                    <div class="sm:w-32 font-bold text-youtetsu-red flex items-center gap-2"><i class="fa-solid fa-users"></i> 対象</div>
+                    <div class="flex-1 text-stone-800 font-medium">
+                        歴代の八王子教室 OB・OG全員
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 max-w-2xl mx-auto">
+        <h2 class="text-center font-mincho text-2xl sm:text-3xl font-bold text-stone-800 mb-12">当日の流れ</h2>
+        <div class="relative border-l-2 border-amber-500/30 ml-3 sm:ml-32 space-y-8">
+            <div class="relative pl-8 sm:pl-10 group">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-youtetsu-cream"></span>
+                <span class="sm:absolute sm:-left-28 sm:top-0.5 text-sm font-bold text-amber-600 block mb-1 sm:mb-0">14:30</span>
+                <h4 class="font-bold text-stone-800">受付開始</h4>
+                <p class="text-xs text-stone-500 mt-1">懐かしの教室へお入りください。</p>
+            </div>
+            <div class="relative pl-8 sm:pl-10">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-youtetsu-red border-4 border-youtetsu-cream"></span>
+                <span class="sm:absolute sm:-left-28 sm:top-0.5 text-sm font-bold text-youtetsu-red block mb-1 sm:mb-0">15:00</span>
+                <h4 class="font-bold text-stone-800">開会・乾杯</h4>
+                <p class="text-xs text-stone-500 mt-1">同窓会のスタートです！</p>
+            </div>
+            <div class="relative pl-8 sm:pl-10">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-stone-400 border-4 border-youtetsu-cream"></span>
+                <span class="sm:absolute sm:-left-28 sm:top-0.5 text-sm font-bold text-stone-500 block mb-1 sm:mb-0">15:30</span>
+                <h4 class="font-bold text-stone-800">ご歓談・思い出トーク</h4>
+                <p class="text-xs text-stone-500 mt-1">あの頃の机に座って、自由に語り合いましょう。</p>
+            </div>
+            <div class="relative pl-8 sm:pl-10">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-stone-400 border-4 border-youtetsu-cream"></span>
+                <span class="sm:absolute sm:-left-28 sm:top-0.5 text-sm font-bold text-stone-500 block mb-1 sm:mb-0">17:30</span>
+                <h4 class="font-bold text-stone-800">記念撮影</h4>
+                <p class="text-xs text-stone-500 mt-1">全員で集合写真を撮影します。</p>
+            </div>
+            <div class="relative pl-8 sm:pl-10">
+                <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-stone-800 border-4 border-youtetsu-cream"></span>
+                <span class="sm:absolute sm:-left-28 sm:top-0.5 text-sm font-bold text-stone-800 block mb-1 sm:mb-0">18:00</span>
+                <h4 class="font-bold text-stone-800">中締め・解散</h4>
+                <p class="text-xs text-stone-500 mt-1">※話し足りない方は各自二次会へ！</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-gradient-to-br from-red-900 to-youtetsu-dark text-white text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-mincho text-2xl sm:text-4xl font-bold mb-4">あの机が、あなたを待っています。</h2>
+            <p class="text-red-200 text-xs sm:text-sm mb-8">準備の都合上、事前の参加登録にご協力をお願いいたします。</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" rel="noopener" class="inline-block w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-stone-900 font-bold px-12 py-5 rounded-full shadow-2xl transition duration-300 transform hover:scale-105 text-lg">
+                参加フォームを開く（1分で完了）
+            </a>
+            <p class="text-[11px] text-stone-400 mt-4">※今後の重要なお知らせがある場合は、ご登録メールアドレス宛にお送りします。</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 max-w-2xl mx-auto">
+        <h2 class="text-center font-mincho text-2xl font-bold text-stone-800 mb-10">よくあるご質問</h2>
+        <div class="space-y-4">
+            <details class="group bg-white rounded-xl p-5 border border-stone-200/80 cursor-pointer shadow-sm">
+                <summary class="flex justify-between items-center font-bold text-stone-800 list-none">
+                    <span>Q. ドレスコード（服装の指定）はありますか？</span>
+                    <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-xs text-stone-400"></i></span>
+                </summary>
+                <p class="text-sm text-stone-600 mt-3 pt-3 border-t border-stone-100">
+                    いっさい不要です！休日の過ごしやすい格好（普段着）でお気軽にご参加ください。
+                </p>
+            </details>
+
+            <details class="group bg-white rounded-xl p-5 border border-stone-200/80 cursor-pointer shadow-sm">
+                <summary class="flex justify-between items-center font-bold text-stone-800 list-none">
+                    <span>Q. 途中参加や、早めの退出は可能ですか？</span>
+                    <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-xs text-stone-400"></i></span>
+                </summary>
+                <p class="text-sm text-stone-600 mt-3 pt-3 border-t border-stone-100">
+                    はい、大歓迎です。ご都合の良い時間にいらしてください。
+                </p>
+            </details>
+
+            <details class="group bg-white rounded-xl p-5 border border-stone-200/80 cursor-pointer shadow-sm">
+                <summary class="flex justify-between items-center font-bold text-stone-800 list-none">
+                    <span>Q. 申し込み後に急に参加できなくなった場合は？</span>
+                    <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-xs text-stone-400"></i></span>
+                </summary>
+                <p class="text-sm text-stone-600 mt-3 pt-3 border-t border-stone-100">
+                    急な予定変更により参加が難しくなった場合は、お手数ですが下部の「お問い合わせ」よりメールにてご連絡ください。
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <section class="py-16 bg-stone-200/50 px-4 border-t border-stone-200" id="contact">
+        <div class="max-w-xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="font-mincho text-2xl font-bold text-stone-800 mb-2">お問い合わせ</h2>
+                <p class="text-xs text-stone-600">ご質問やキャンセル連絡は、こちらから幹事宛に送信できます。</p>
+            </div>
+
+            <form id="contactForm" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200 space-y-4" onsubmit="sendMail(event)">
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">お名前</label>
+                    <input type="text" id="cName" required class="w-full px-4 py-2 bg-stone-50 border border-stone-300 rounded-lg text-sm focus:outline-none focus:border-youtetsu-red" placeholder="養哲 太郎">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">ご用件</label>
+                    <select id="cSubject" class="w-full px-4 py-2 bg-stone-50 border border-stone-300 rounded-lg text-sm focus:outline-none focus:border-youtetsu-red">
+                        <option value="同窓会に関する質問">同窓会に関する質問</option>
+                        <option value="【欠席連絡】登録後のキャンセル">【欠席連絡】登録後のキャンセル</option>
+                        <option value="その他のお問い合わせ">その他のお問い合わせ</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">メッセージ内容</label>
+                    <textarea id="cMessage" rows="4" required class="w-full px-4 py-2 bg-stone-50 border border-stone-300 rounded-lg text-sm focus:outline-none focus:border-youtetsu-red" placeholder="お問い合わせ内容をご記入ください。"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-stone-800 hover:bg-black text-white font-bold py-3 rounded-lg text-sm transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>メールソフトを起動して送信する</span>
+                </button>
+                <p class="text-[10px] text-center text-stone-400">※お使いの端末のメールアプリが起動します。直接送信する場合は <a href="mailto:sakai@youtetsu-sophia.com" class="underline">sakai@youtetsu-sophia.com</a> までご連絡ください。</p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 text-center py-8 text-xs">
+        <p>養哲塾八王子教室 同窓会幹事</p>
+        <p class="mt-2 text-[10px] text-stone-600">© 2026 Yotetsu Hachioji Alumni. All Rights Reserved.</p>
+    </footer>
+
+    <div id="stickyBar" class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-stone-200 p-3 flex justify-between items-center px-6 z-50 transform translate-y-full transition-transform duration-300 sm:hidden">
+        <div>
+            <span class="text-[10px] text-youtetsu-red font-bold block">10月3日(土) 15:00開催</span>
+            <span class="text-xs font-bold text-stone-800">八王子教室 同窓会</span>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" class="bg-youtetsu-red text-white text-xs font-bold px-5 py-2.5 rounded-full shadow">
+            申し込む
+        </a>
+    </div>
+
+    <script>
+        // 1. カウントダウンタイマー
+        function updateCountdown() {
+            const target = new Date('2026-10-03T15:00:00+09:00').getTime();
+            const now = new Date().getTime();
+            const diff = target - now;
+
+            const el = document.getElementById('countdown');
+
+            if (diff < 0) {
+                el.innerHTML = '<span class="text-amber-400">本日開催！</span>';
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            el.innerHTML = `
+                <div class="text-center"><span class="block text-4xl sm:text-6xl font-bold">${d}</span><span class="text-[10px] text-stone-400 block mt-1">DAYS</span></div>
+                <span class="text-stone-600">:</span>
+                <div class="text-center"><span class="block text-4xl sm:text-6xl font-bold">${String(h).padStart(2,'0')}</span><span class="text-[10px] text-stone-400 block mt-1">HOURS</span></div>
+                <span class="text-stone-600">:</span>
+                <div class="text-center"><span class="block text-4xl sm:text-6xl font-bold">${String(m).padStart(2,'0')}</span><span class="text-[10px] text-stone-400 block mt-1">MINS</span></div>
+            `;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 2. スマホ用追従バーの表示制御（トップを過ぎたら出す）
+        window.addEventListener('scroll', () => {
+            const bar = document.getElementById('stickyBar');
+            if (window.scrollY > 500) {
+                bar.classList.remove('translate-y-full');
+            } else {
+                bar.classList.add('translate-y-full');
+            }
+        });
+
+        // 3. お問い合わせ（静的HTML用のMailtoジェネレーター）
+        function sendMail(e) {
+            e.preventDefault();
+            const name = document.getElementById('cName').value;
+            const subject = document.getElementById('cSubject').value;
+            const msg = document.getElementById('cMessage').value;
+            
+            const to = 'sakai@youtetsu-sophia.com';
+            const body = `${name} 様より同窓会サイトから問い合わせがありました。%0D%0A%0D%0A【内容】%0D%0A${encodeURIComponent(msg)}`;
+            
+            window.location.href = `mailto:${to}?subject=【同窓会Webより】${encodeURIComponent(subject)}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
