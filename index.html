@@ -6,15 +6,15 @@
   <title>あの日の教室へ、タイムスリップ。｜養哲塾八王子教室 同窓会 2026</title>
 
   <!-- SEO -->
-  <meta name="description" content="養哲塾 八王子教室の歴代OB・OG全員集合。2026年10月3日(土)15:00、あの黒板の前で、もう一度。一夜限りの大同窓会へご招待します。" />
-  <meta name="theme-color" content="#1e2a24" />
+  <meta name="description" content="養哲塾 八王子教室の歴代OB・OG全員集合。2026年10月3日(土)15:00、あの白い机と赤い椅子の前で、もう一度。一夜限りの大同窓会へご招待します。" />
+  <meta name="theme-color" content="#c62e2e" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://youtetsu-sophia.com/hachioji-reunion-2026/" />
 
   <!-- OGP / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="あの日の教室へ、タイムスリップ。｜養哲塾八王子教室 同窓会 2026" />
-  <meta property="og:description" content="歴代のOB・OG全員集合。あの黒板の前で、もう一度。2026年10月3日(土)15:00開催。" />
+  <meta property="og:description" content="歴代のOB・OG全員集合。あの白い机と赤い椅子の前で、もう一度。2026年10月3日(土)15:00開催。" />
   <meta property="og:image" content="youtetsu7-1024x576.jpg" />
   <meta property="og:locale" content="ja_JP" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -29,6 +29,7 @@
     "endDate": "2026-10-03T18:00:00+09:00",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
+    "image": "youtetsu7-1024x576.jpg",
     "location": {
       "@type": "Place",
       "name": "養哲塾 八王子教室",
@@ -40,11 +41,7 @@
         "streetAddress": "大和田町3丁目21-19 アヴスナオビル"
       }
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "4000",
-      "priceCurrency": "JPY"
-    }
+    "offers": { "@type": "Offer", "price": "4000", "priceCurrency": "JPY" }
   }
   </script>
 
@@ -58,19 +55,18 @@
       theme: {
         extend: {
           colors: {
-            board:   '#1e2a24', // 黒板の緑黒
-            board2:  '#26332c',
-            chalk:   '#f3efe4', // チョークの白
-            chair:   '#c62e2e', // あの赤い椅子
+            chair:    '#c62e2e', // あの赤い椅子
             chairdeep:'#9e2323',
-            dusk:    '#d9842e', // 夕暮れの光
-            cream:   '#faf6ee', // 思い出のノート
-            ink:     '#2a2521',
+            chairsoft:'#fdecec',
+            ink:      '#2a2521', // 文字／フレームの黒
+            frame:    '#1c1c1e', // 机の脚
+            cream:    '#faf6ee', // 思い出のノート
+            panel:    '#fbfbf9', // ホワイトボードの白
           },
           fontFamily: {
             mincho: ['"Zen Old Mincho"', 'serif'],
             sans: ['"Noto Sans JP"', 'sans-serif'],
-            chalk: ['"Klee One"', 'cursive'],
+            marker: ['"Klee One"', 'cursive'],
           },
         },
       },
@@ -79,49 +75,36 @@
 
   <style>
     :root { --ease: cubic-bezier(0.16, 1, 0.3, 1); }
-
     body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
-    /* --- 黒板サーフェス --- */
-    .blackboard {
-      background-color: #1e2a24;
-      background-image:
-        radial-gradient(120% 80% at 18% 0%, rgba(255,255,255,.06), transparent 55%),
-        radial-gradient(120% 90% at 85% 110%, rgba(0,0,0,.45), transparent 60%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    }
-    /* 木枠 + チョーク受け */
-    .chalk-frame {
-      border: 10px solid #6b4f33;
-      border-radius: 10px;
+    /* 改行を「句」単位に：語の途中で折り返さない */
+    .phrase > span { display: inline-block; }
+    h1, h2, h3 { text-wrap: balance; }
+
+    /* --- ホワイトボード（シグネチャー） --- */
+    .whiteboard {
+      background:
+        linear-gradient(165deg, #ffffff 0%, #f5f5f2 100%);
+      border: 1px solid #e7e4db;
+      border-radius: 14px;
       box-shadow:
-        inset 0 0 0 2px rgba(0,0,0,.4),
-        inset 0 6px 26px rgba(0,0,0,.45),
-        0 24px 60px -24px rgba(0,0,0,.55);
+        inset 0 1px 0 #ffffff,
+        inset 0 0 40px rgba(0,0,0,.02),
+        0 30px 60px -34px rgba(28,28,30,.28);
       position: relative;
     }
-    .chalk-tray {
-      position: absolute;
-      left: -10px; right: -10px; bottom: -22px;
-      height: 14px;
-      background: linear-gradient(#7a5a3a, #5a4128);
-      border-radius: 4px;
-      box-shadow: 0 8px 14px -6px rgba(0,0,0,.5);
+    /* アルミのマーカー受け＋赤・黒マーカー */
+    .marker-tray {
+      position: absolute; left: 7%; right: 7%; bottom: -9px; height: 11px;
+      background: linear-gradient(#e3e4e7, #b3b6bb);
+      border-radius: 6px;
+      box-shadow: 0 7px 14px -7px rgba(0,0,0,.45);
     }
-    .chalk-tray::before, .chalk-tray::after {
-      content: ""; position: absolute; top: 4px; height: 6px; border-radius: 4px;
-      background: #f3efe4; box-shadow: 0 0 6px rgba(255,255,255,.5);
+    .marker-tray::before, .marker-tray::after {
+      content: ""; position: absolute; top: -3px; height: 7px; border-radius: 3px;
     }
-    .chalk-tray::before { left: 16%; width: 56px; transform: rotate(-1deg); }
-    .chalk-tray::after  { right: 22%; width: 30px; background: #e7b27a; box-shadow: 0 0 6px rgba(217,132,46,.5); }
-
-    .chalk-text { text-shadow: 0 0 1px rgba(243,239,228,.55), 0 1px 2px rgba(0,0,0,.25); }
-
-    /* ノートの罫線（薄く） */
-    .ruled {
-      background-image: linear-gradient(rgba(198,46,46,0.06) 1px, transparent 1px);
-      background-size: 100% 2.1rem;
-    }
+    .marker-tray::before { left: 14%; width: 64px; background: #c62e2e; transform: rotate(-1.5deg); box-shadow: 0 1px 2px rgba(0,0,0,.3); }
+    .marker-tray::after  { right: 18%; width: 48px; background: #2a2521; transform: rotate(1deg); box-shadow: 0 1px 2px rgba(0,0,0,.3); }
 
     /* --- リビールアニメ --- */
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
@@ -131,15 +114,14 @@
     .reveal[data-d="3"] { transition-delay: .24s; }
     .reveal[data-d="4"] { transition-delay: .32s; }
 
-    /* 手描き下線のドロー */
-    .draw path { stroke-dasharray: 240; stroke-dashoffset: 240; transition: stroke-dashoffset 1.1s var(--ease) .15s; }
+    /* 手描き（マーカー）下線のドロー */
+    .draw path { stroke-dasharray: 280; stroke-dashoffset: 280; transition: stroke-dashoffset 1.1s var(--ease) .2s; }
     .reveal.in .draw path, .draw.in path { stroke-dashoffset: 0; }
 
-    /* フォーカス可視 */
-    a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-      outline: 2px solid #d9842e; outline-offset: 3px; border-radius: 6px;
+    a:focus-visible, button:focus-visible, summary:focus-visible,
+    input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid #c62e2e; outline-offset: 3px; border-radius: 6px;
     }
-
     summary::-webkit-details-marker { display: none; }
 
     @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
@@ -155,132 +137,117 @@
 
 <body class="bg-cream text-ink font-sans leading-relaxed selection:bg-chair/15 selection:text-chairdeep">
 
-  <a href="#concept" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-board focus:text-chalk focus:px-4 focus:py-2 focus:rounded-lg">本文へスキップ</a>
+  <a href="#concept" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-ink focus:text-cream focus:px-4 focus:py-2 focus:rounded-lg">本文へスキップ</a>
 
   <!-- ===== デスクトップ追従ヘッダー ===== -->
   <header id="topbar" class="fixed top-0 inset-x-0 z-50 hidden sm:block -translate-y-full transition-transform duration-500" style="transition-timing-function:var(--ease)">
-    <div class="bg-board/95 backdrop-blur-md border-b border-white/10">
+    <div class="bg-panel/95 backdrop-blur-md border-b border-stone-200">
       <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <div class="flex items-center gap-3 text-chalk">
-          <span class="font-chalk text-lg chalk-text">養哲塾 八王子教室 同窓会</span>
-          <span class="text-chalk/50 text-xs tracking-wider">2026.10.03 SAT</span>
+        <div class="flex items-center gap-3">
+          <span class="w-2.5 h-2.5 rounded-full bg-chair"></span>
+          <span class="font-mincho font-bold text-ink">養哲塾 八王子教室 同窓会</span>
+          <span class="text-stone-400 text-xs tracking-wider">2026.10.03 SAT</span>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" rel="noopener"
-           class="bg-chair hover:bg-chairdeep text-white text-sm font-bold px-5 py-2 rounded-full transition-colors">
-          参加を申し込む
-        </a>
+           class="bg-chair hover:bg-chairdeep text-white text-sm font-bold px-5 py-2 rounded-full transition-colors">参加を申し込む</a>
       </div>
     </div>
   </header>
 
-  <!-- ===== HERO（黒板） ===== -->
-  <section class="relative min-h-[100svh] flex items-center justify-center overflow-hidden blackboard">
-    <!-- 古い教室写真を黒板に貼ったように -->
-    <div class="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-luminosity" style="background-image:url('youtetsu7-1024x576.jpg')" aria-hidden="true"></div>
-    <!-- 夕暮れの光 -->
-    <div class="absolute inset-0" style="background:radial-gradient(80% 60% at 78% 12%, rgba(217,132,46,.28), transparent 60%)" aria-hidden="true"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-board via-board/40 to-transparent" aria-hidden="true"></div>
+  <!-- ===== HERO（教室の写真） ===== -->
+  <section class="relative min-h-[100svh] flex items-center overflow-hidden">
+    <img src="youtetsu7-1024x576.jpg" alt="養哲塾 八王子教室。U字に並ぶ白い机と、特徴的な赤い椅子が並ぶ教室の風景" class="absolute inset-0 w-full h-full object-cover" />
+    <!-- 可読性スクリム：PCは左から、スマホは下から -->
+    <div class="absolute inset-0 hidden sm:block" style="background:linear-gradient(100deg, rgba(250,246,238,.97) 0%, rgba(250,246,238,.9) 30%, rgba(250,246,238,.55) 52%, rgba(250,246,238,.12) 74%, rgba(250,246,238,0) 100%)" aria-hidden="true"></div>
+    <div class="absolute inset-0 sm:hidden" style="background:linear-gradient(to bottom, rgba(250,246,238,.62) 0%, rgba(250,246,238,.86) 46%, rgba(250,246,238,.97) 100%)" aria-hidden="true"></div>
 
-    <div class="relative z-10 text-center px-5 max-w-3xl mx-auto">
-      <p class="reveal font-chalk text-dusk text-lg sm:text-xl tracking-[0.2em] mb-5 chalk-text">
-        ー 起立、礼。そして、おかえり。 ー
-      </p>
+    <div class="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8">
+      <div class="max-w-xl text-center sm:text-left">
+        <p class="reveal font-marker text-chair text-lg sm:text-xl tracking-wider mb-5">ー 起立、礼。そして、おかえり。 ー</p>
 
-      <h1 class="reveal text-4xl sm:text-6xl md:text-7xl font-mincho font-black text-chalk tracking-wide leading-[1.25] mb-3 chalk-text" data-d="1">
-        あの日の教室へ、<br class="sm:hidden" />タイムスリップ。
-      </h1>
+        <h1 class="reveal phrase text-4xl sm:text-6xl md:text-7xl font-mincho font-black text-ink leading-[1.28] mb-3" data-d="1">
+          <span>あの日の教室へ、</span><span>タイムスリップ。</span>
+        </h1>
 
-      <!-- チョークの手描き下線 -->
-      <svg class="reveal draw mx-auto mb-8 w-56 sm:w-72 text-chair" viewBox="0 0 280 14" fill="none" aria-hidden="true" data-d="2">
-        <path d="M5 9 C 70 3, 120 12, 180 6 S 250 4, 275 8" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-      </svg>
+        <svg class="reveal draw mx-auto sm:mx-0 mb-8 w-56 sm:w-72 text-chair" viewBox="0 0 300 14" fill="none" aria-hidden="true" data-d="2">
+          <path d="M5 9 C 75 3, 130 12, 195 6 S 265 4, 295 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
 
-      <p class="reveal text-chalk/80 text-sm sm:text-base mb-10 font-light leading-loose" data-d="3">
-        チョークの舞う匂い。U字に並ぶ白い机。<br />
-        夕暮れまで粘った、あの赤い椅子。<br />
-        大人になった私たちが、もう一度あの場所に集う日。
-      </p>
+        <p class="reveal phrase text-stone-700 text-sm sm:text-base mb-10 leading-loose" data-d="3">
+          <span>キュッと鳴った、ホワイトボードのマーカー。</span><span>U字に並ぶ、白い机。</span><span>夕暮れまで粘った、あの赤い椅子。</span><span class="block mt-1">大人になった私たちが、もう一度あの場所に集う日。</span>
+        </p>
 
-      <div class="reveal flex flex-col sm:flex-row gap-3 justify-center items-center" data-d="4">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" rel="noopener"
-           class="group w-full sm:w-auto bg-chair hover:bg-chairdeep text-white font-bold px-9 py-4 rounded-full shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
-          <span>参加申し込みをする</span>
-          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-        </a>
-        <a href="#details" class="w-full sm:w-auto border border-chalk/30 hover:bg-chalk/10 text-chalk font-medium px-9 py-4 rounded-full transition-colors duration-300">
-          詳細を見る
-        </a>
+        <div class="reveal flex flex-col sm:flex-row gap-3 justify-center sm:justify-start items-center" data-d="4">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" rel="noopener"
+             class="group w-full sm:w-auto bg-chair hover:bg-chairdeep text-white font-bold px-9 py-4 rounded-full shadow-xl shadow-chair/20 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
+            <span>参加申し込みをする</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="#details" class="w-full sm:w-auto border border-ink/25 hover:bg-ink/5 text-ink font-medium px-9 py-4 rounded-full transition-colors duration-300">詳細を見る</a>
+        </div>
       </div>
     </div>
 
-    <a href="#countdown" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-chalk/45 hover:text-chalk text-[10px] tracking-[0.3em] flex flex-col items-center gap-2 scroll-cue" aria-label="下へスクロール">
+    <a href="#countdown-wrap" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-ink/40 hover:text-ink text-[10px] tracking-[0.3em] flex flex-col items-center gap-2 scroll-cue" aria-label="下へスクロール">
       <span>SCROLL</span>
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
     </a>
   </section>
 
-  <!-- ===== カウントダウン（黒板に書かれた残り日数） ===== -->
-  <section id="countdown-wrap" class="blackboard text-chalk py-12 border-t border-white/5">
+  <!-- ===== カウントダウン（赤い椅子の赤） ===== -->
+  <section id="countdown-wrap" class="bg-gradient-to-br from-chair to-chairdeep text-white py-12">
     <div class="max-w-4xl mx-auto px-5 text-center">
-      <p class="reveal font-chalk text-dusk text-sm tracking-[0.25em] mb-6 chalk-text">— 開校（再会）まで、あと —</p>
-      <div id="countdown" class="reveal flex justify-center items-end gap-3 sm:gap-8 font-mincho chalk-text" data-d="1" aria-live="polite"></div>
+      <p class="reveal font-marker text-white/85 text-sm tracking-[0.25em] mb-6">— 再会まで、あと —</p>
+      <div id="countdown" class="reveal flex justify-center items-end gap-3 sm:gap-8 font-mincho" data-d="1" aria-live="polite"></div>
     </div>
   </section>
 
   <!-- ===== CONCEPT ===== -->
   <section id="concept" class="py-24 px-5">
     <div class="max-w-2xl mx-auto text-center">
-      <p class="reveal font-chalk text-chair text-base tracking-wider mb-3">Concept</p>
-      <h2 class="reveal text-2xl sm:text-4xl font-mincho font-bold text-ink mb-10 leading-snug" data-d="1">
-        歴代のOB・OG、<br class="sm:hidden" />全員集合。
+      <p class="reveal font-marker text-chair text-base tracking-wider mb-3">Concept</p>
+      <h2 class="reveal phrase text-2xl sm:text-4xl font-mincho font-bold text-ink mb-10 leading-snug" data-d="1">
+        <span>歴代のOB・OG、</span><span>全員集合。</span>
       </h2>
       <div class="reveal space-y-7 text-stone-600 leading-loose text-sm sm:text-base" data-d="2">
-        <p>
-          養哲塾 八王子教室に通っていた、すべての人へ。<br class="hidden sm:inline" />
-          世代を超えて「あの教室」というたった一つの共通点で繋がる、<br class="hidden sm:inline" />一夜限りの大同窓会を開催します。
+        <p class="phrase">
+          <span>養哲塾 八王子教室に通っていた、すべての人へ。</span><span>世代を超えて「あの教室」というたった一つの共通点で繋がる、</span><span>一夜限りの大同窓会を開催します。</span>
         </p>
-        <p>
-          当時の思い出を語り合うもよし、近況を報告し合うもよし。<br class="hidden sm:inline" />
-          ドレスコード等はいっさいありません。<br class="hidden sm:inline" />
-          あの頃と同じように、過ごしやすい格好でふらりと遊びに来てください。
+        <p class="phrase">
+          <span>当時の思い出を語り合うもよし、近況を報告し合うもよし。</span><span>ドレスコード等はいっさいありません。</span><span>あの頃と同じように、過ごしやすい格好でふらりと遊びに来てください。</span>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ===== 黒板メッセージ（感情の山場） ===== -->
+  <!-- ===== ホワイトボードのメッセージ（感情の山場） ===== -->
   <section class="px-5 pb-24">
     <div class="reveal max-w-3xl mx-auto">
-      <div class="chalk-frame blackboard px-7 py-14 sm:px-16 sm:py-20 text-center">
-        <p class="font-chalk text-chalk/70 text-sm sm:text-base tracking-wider mb-5 chalk-text">＿日　付＿　令和八年 十月三日</p>
-        <p class="font-chalk text-chalk text-4xl sm:text-6xl mb-2 chalk-text">おかえりなさい。</p>
-        <svg class="draw mx-auto my-6 w-44 text-dusk" viewBox="0 0 200 12" fill="none" aria-hidden="true"><path d="M4 7 C 60 2, 120 11, 196 5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-        <p class="font-chalk text-chalk/85 text-base sm:text-lg leading-loose chalk-text max-w-md mx-auto">
-          黒板も、机も、あの赤い椅子も、<br />
-          みんなが帰ってくるのを待っています。<br />
-          今日だけは、また「生徒」に戻って。<br />
-          思いきり、語り合いましょう。
+      <div class="whiteboard px-7 py-14 sm:px-16 sm:py-20 text-center">
+        <p class="font-marker text-stone-400 text-sm tracking-wider mb-5">2026.10.03 — 出席をとります</p>
+        <p class="font-marker text-ink text-4xl sm:text-6xl mb-2">おかえりなさい。</p>
+        <svg class="draw mx-auto my-6 w-44 text-chair" viewBox="0 0 200 12" fill="none" aria-hidden="true"><path d="M4 7 C 60 2, 120 11, 196 5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+        <p class="font-marker phrase text-stone-700 text-base sm:text-lg leading-loose max-w-md mx-auto">
+          <span>ホワイトボードも、白い机も、あの赤い椅子も、</span><span>みんなが帰ってくるのを待っています。</span><span class="block mt-2">今日だけは、また「生徒」に戻って、</span><span>思いきり語り合いましょう。</span>
         </p>
-        <p class="font-chalk text-chalk/55 text-sm mt-8 chalk-text">— 八王子教室 同窓会幹事 一同 —</p>
-        <span class="chalk-tray"></span>
+        <p class="font-marker text-stone-400 text-sm mt-8">— 八王子教室 同窓会幹事 一同 —</p>
+        <span class="marker-tray" aria-hidden="true"></span>
       </div>
     </div>
   </section>
 
   <!-- ===== 開催概要 ===== -->
-  <section id="details" class="py-24 bg-white border-y border-stone-200/70 px-5 ruled">
+  <section id="details" class="py-24 bg-white border-y border-stone-200/70 px-5">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
-        <p class="reveal font-chalk text-chair text-base tracking-wider mb-3">Information</p>
+        <p class="reveal font-marker text-chair text-base tracking-wider mb-3">Information</p>
         <h2 class="reveal text-2xl sm:text-4xl font-mincho font-bold text-ink" data-d="1">開催概要</h2>
       </div>
 
       <div class="reveal bg-cream/70 rounded-2xl shadow-sm border border-stone-200/80 overflow-hidden divide-y divide-stone-200/60" data-d="1">
-        <!-- 日時 -->
         <div class="p-7 sm:p-8 flex flex-col sm:flex-row gap-3 sm:gap-8 items-start">
           <div class="sm:w-28 shrink-0 font-bold text-chair flex items-center gap-2">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            日時
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>日時
           </div>
           <div class="flex-1">
             <p class="text-stone-500 text-sm mb-0.5">2026年10月3日（土）</p>
@@ -289,11 +256,9 @@
           </div>
         </div>
 
-        <!-- 会場 -->
         <div class="p-7 sm:p-8 flex flex-col sm:flex-row gap-3 sm:gap-8 items-start">
           <div class="sm:w-28 shrink-0 font-bold text-chair flex items-center gap-2">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            会場
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>会場
           </div>
           <div class="flex-1">
             <p class="font-bold text-lg text-ink mb-1">養哲塾 八王子教室</p>
@@ -304,11 +269,9 @@
           </div>
         </div>
 
-        <!-- 会費 -->
         <div class="p-7 sm:p-8 flex flex-col sm:flex-row gap-3 sm:gap-8 items-start">
           <div class="sm:w-28 shrink-0 font-bold text-chair flex items-center gap-2">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9.5V21M6 3l6 6.5L18 3"/><path d="M6 11h12M6 15h12"/></svg>
-            会費
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9.5V21M6 3l6 6.5L18 3"/><path d="M6 11h12M6 15h12"/></svg>会費
           </div>
           <div class="flex-1">
             <p><span class="text-3xl font-bold font-mincho text-ink">4,000</span><span class="text-lg text-stone-600 ml-0.5">円</span></p>
@@ -316,15 +279,11 @@
           </div>
         </div>
 
-        <!-- 対象 -->
         <div class="p-7 sm:p-8 flex flex-col sm:flex-row gap-3 sm:gap-8 items-start">
           <div class="sm:w-28 shrink-0 font-bold text-chair flex items-center gap-2">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg>
-            対象
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg>対象
           </div>
-          <div class="flex-1 text-ink font-medium">
-            歴代の八王子教室 OB・OG全員
-          </div>
+          <div class="flex-1 text-ink font-medium">歴代の八王子教室 OB・OG全員</div>
         </div>
       </div>
     </div>
@@ -334,14 +293,14 @@
   <section class="py-24 px-5">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-14">
-        <p class="reveal font-chalk text-chair text-base tracking-wider mb-3">Time Schedule</p>
+        <p class="reveal font-marker text-chair text-base tracking-wider mb-3">Time Schedule</p>
         <h2 class="reveal text-2xl sm:text-4xl font-mincho font-bold text-ink" data-d="1">当日の流れ</h2>
       </div>
 
-      <ol class="relative border-l-2 border-dusk/30 ml-2 sm:ml-28 space-y-9">
+      <ol class="relative border-l-2 border-chair/25 ml-2 sm:ml-28 space-y-9">
         <li class="reveal relative pl-8 sm:pl-10">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-dusk ring-4 ring-cream"></span>
-          <span class="sm:absolute sm:-left-24 sm:top-0.5 text-sm font-bold text-dusk block mb-0.5 sm:mb-0">14:30</span>
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-chair ring-4 ring-cream"></span>
+          <span class="sm:absolute sm:-left-24 sm:top-0.5 text-sm font-bold text-chair block mb-0.5 sm:mb-0">14:30</span>
           <h3 class="font-bold text-ink">受付開始</h3>
           <p class="text-xs text-stone-500 mt-1">懐かしの教室へお入りください。</p>
         </li>
@@ -364,8 +323,8 @@
           <p class="text-xs text-stone-500 mt-1">全員で集合写真を撮影します。</p>
         </li>
         <li class="reveal relative pl-8 sm:pl-10" data-d="4">
-          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-board ring-4 ring-cream"></span>
-          <span class="sm:absolute sm:-left-24 sm:top-0.5 text-sm font-bold text-board block mb-0.5 sm:mb-0">18:00</span>
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-ink ring-4 ring-cream"></span>
+          <span class="sm:absolute sm:-left-24 sm:top-0.5 text-sm font-bold text-ink block mb-0.5 sm:mb-0">18:00</span>
           <h3 class="font-bold text-ink">中締め・解散</h3>
           <p class="text-xs text-stone-500 mt-1">話し足りない方は、各自二次会へ！</p>
         </li>
@@ -373,18 +332,20 @@
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <section class="py-24 px-5 blackboard text-center relative overflow-hidden">
-    <div class="absolute inset-0" style="background:radial-gradient(70% 60% at 50% 0%, rgba(217,132,46,.22), transparent 60%)" aria-hidden="true"></div>
+  <!-- ===== CTA（教室の写真 × 赤いスクリム） ===== -->
+  <section class="relative py-28 px-5 text-center overflow-hidden">
+    <img src="youtetsu7-1024x576.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(42,37,33,.9) 0%, rgba(158,35,35,.78) 55%, rgba(158,35,35,.55) 100%)" aria-hidden="true"></div>
     <div class="reveal relative max-w-2xl mx-auto">
-      <h2 class="font-mincho text-2xl sm:text-4xl font-bold text-chalk mb-4 chalk-text leading-snug">あの机が、あなたを待っています。</h2>
-      <p class="text-chalk/60 text-xs sm:text-sm mb-9">準備の都合上、事前の参加登録にご協力をお願いいたします。</p>
+      <h2 class="phrase font-mincho text-2xl sm:text-4xl font-bold text-white mb-4 leading-snug" style="text-shadow:0 2px 12px rgba(0,0,0,.35)">
+        <span>あの机が、</span><span>あなたを待っています。</span>
+      </h2>
+      <p class="text-white/80 text-xs sm:text-sm mb-9">準備の都合上、事前の参加登録にご協力をお願いいたします。</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto bg-dusk hover:bg-amber-500 text-board font-bold px-11 py-5 rounded-full shadow-2xl transition-all duration-300 hover:scale-[1.03] text-lg">
-        参加フォームを開く
-        <span class="text-board/60 text-sm font-medium">（1分で完了）</span>
+         class="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto bg-white hover:bg-cream text-chairdeep font-bold px-11 py-5 rounded-full shadow-2xl transition-all duration-300 hover:scale-[1.03] text-lg">
+        参加フォームを開く<span class="text-stone-400 text-sm font-medium">（1分で完了）</span>
       </a>
-      <p class="text-[11px] text-chalk/45 mt-5">今後の重要なお知らせは、ご登録のメールアドレス宛にお送りします。</p>
+      <p class="text-[11px] text-white/60 mt-5">今後の重要なお知らせは、ご登録のメールアドレス宛にお送りします。</p>
     </div>
   </section>
 
@@ -392,7 +353,7 @@
   <section class="py-24 px-5">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-12">
-        <p class="reveal font-chalk text-chair text-base tracking-wider mb-3">Q &amp; A</p>
+        <p class="reveal font-marker text-chair text-base tracking-wider mb-3">Q &amp; A</p>
         <h2 class="reveal text-2xl sm:text-4xl font-mincho font-bold text-ink" data-d="1">よくあるご質問</h2>
       </div>
       <div class="space-y-3.5">
@@ -403,7 +364,6 @@
           </summary>
           <p class="text-sm text-stone-600 px-5 sm:px-6 pb-5 sm:pb-6 -mt-1">いっさい不要です！ 休日の過ごしやすい格好（普段着）で、お気軽にご参加ください。</p>
         </details>
-
         <details class="reveal group bg-white rounded-xl border border-stone-200/80 shadow-sm overflow-hidden" data-d="1">
           <summary class="flex justify-between items-center gap-4 font-bold text-ink list-none cursor-pointer p-5 sm:p-6">
             <span>途中参加や、早めの退出は可能ですか？</span>
@@ -411,7 +371,6 @@
           </summary>
           <p class="text-sm text-stone-600 px-5 sm:px-6 pb-5 sm:pb-6 -mt-1">はい、大歓迎です。ご都合の良い時間にいらしてください。</p>
         </details>
-
         <details class="reveal group bg-white rounded-xl border border-stone-200/80 shadow-sm overflow-hidden" data-d="2">
           <summary class="flex justify-between items-center gap-4 font-bold text-ink list-none cursor-pointer p-5 sm:p-6">
             <span>申し込み後に急に参加できなくなった場合は？</span>
@@ -427,7 +386,7 @@
   <section class="py-24 bg-white border-t border-stone-200/70 px-5" id="contact">
     <div class="max-w-xl mx-auto">
       <div class="text-center mb-10">
-        <p class="reveal font-chalk text-chair text-base tracking-wider mb-3">Contact</p>
+        <p class="reveal font-marker text-chair text-base tracking-wider mb-3">Contact</p>
         <h2 class="reveal text-2xl sm:text-4xl font-mincho font-bold text-ink mb-2" data-d="1">お問い合わせ</h2>
         <p class="reveal text-xs text-stone-600" data-d="2">ご質問やキャンセルのご連絡は、こちらから幹事宛に送信できます。</p>
       </div>
@@ -449,7 +408,7 @@
           <label for="cMessage" class="block text-xs font-bold text-stone-700 mb-1.5">メッセージ内容</label>
           <textarea id="cMessage" rows="4" required class="w-full px-4 py-2.5 bg-white border border-stone-300 rounded-lg text-sm focus:outline-none focus:border-chair transition-colors" placeholder="お問い合わせ内容をご記入ください。"></textarea>
         </div>
-        <button type="submit" class="w-full bg-board hover:bg-board2 text-chalk font-bold py-3.5 rounded-lg text-sm transition-colors flex items-center justify-center gap-2.5">
+        <button type="submit" class="w-full bg-ink hover:bg-black text-cream font-bold py-3.5 rounded-lg text-sm transition-colors flex items-center justify-center gap-2.5">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           メールソフトを起動して送信する
         </button>
@@ -459,20 +418,18 @@
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer class="blackboard text-chalk/60 text-center py-10 text-xs">
-    <p class="font-chalk text-chalk text-base chalk-text mb-2">養哲塾 八王子教室 同窓会幹事</p>
-    <p class="text-[10px] text-chalk/35">© 2026 Yotetsu Hachioji Alumni. All Rights Reserved.</p>
+  <footer class="bg-ink text-cream/60 text-center py-10 text-xs">
+    <p class="font-mincho text-cream text-base mb-2">養哲塾 八王子教室 同窓会幹事</p>
+    <p class="text-[10px] text-cream/35">© 2026 Yotetsu Hachioji Alumni. All Rights Reserved.</p>
   </footer>
 
   <!-- ===== スマホ追従バー ===== -->
-  <div id="stickyBar" class="fixed bottom-0 inset-x-0 bg-white/90 backdrop-blur-md border-t border-stone-200 p-3 flex justify-between items-center px-5 z-50 translate-y-full transition-transform duration-300 sm:hidden" style="transition-timing-function:var(--ease)">
+  <div id="stickyBar" class="fixed bottom-0 inset-x-0 bg-panel/95 backdrop-blur-md border-t border-stone-200 p-3 flex justify-between items-center px-5 z-50 translate-y-full transition-transform duration-300 sm:hidden" style="transition-timing-function:var(--ease)">
     <div>
       <span class="text-[10px] text-chair font-bold block">10月3日(土) 15:00 開催</span>
       <span class="text-sm font-bold text-ink">八王子教室 同窓会</span>
     </div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" rel="noopener" class="bg-chair hover:bg-chairdeep text-white text-sm font-bold px-6 py-2.5 rounded-full shadow transition-colors">
-      申し込む
-    </a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScrrkYAS2r3kfyzrEiV2kYbPLw68co3pDdgmShQZDCsgKPkZw/viewform?usp=header" target="_blank" rel="noopener" class="bg-chair hover:bg-chairdeep text-white text-sm font-bold px-6 py-2.5 rounded-full shadow transition-colors">申し込む</a>
   </div>
 
   <script>
@@ -481,18 +438,17 @@
       const el = document.getElementById('countdown');
       const target = new Date('2026-10-03T15:00:00+09:00').getTime();
       const cell = (n, label) =>
-        `<div class="flex flex-col items-center"><span class="text-5xl sm:text-7xl font-black leading-none">${n}</span><span class="text-[10px] tracking-[0.2em] text-chalk/45 mt-2">${label}</span></div>`;
+        `<div class="flex flex-col items-center"><span class="text-5xl sm:text-7xl font-black leading-none">${n}</span><span class="text-[10px] tracking-[0.2em] text-white/55 mt-2">${label}</span></div>`;
       function tick() {
         const diff = target - Date.now();
-        if (diff < 0) { el.innerHTML = '<span class="font-chalk text-dusk text-4xl chalk-text">本日、開校！</span>'; return; }
+        if (diff < 0) { el.innerHTML = '<span class="font-marker text-4xl">本日、開校！</span>'; return; }
         const d = Math.floor(diff / 86400000);
         const h = Math.floor((diff % 86400000) / 3600000);
         const m = Math.floor((diff % 3600000) / 60000);
-        const sep = '<span class="text-chalk/25 text-4xl sm:text-6xl pb-5">:</span>';
+        const sep = '<span class="text-white/30 text-4xl sm:text-6xl pb-5">:</span>';
         el.innerHTML = cell(d, 'DAYS') + sep + cell(String(h).padStart(2, '0'), 'HOURS') + sep + cell(String(m).padStart(2, '0'), 'MINS');
       }
-      tick();
-      setInterval(tick, 1000 * 30);
+      tick(); setInterval(tick, 1000 * 30);
     })();
 
     // --- スクロールリビール ---
@@ -503,7 +459,7 @@
       document.querySelectorAll('.reveal').forEach((n) => io.observe(n));
     })();
 
-    // --- 追従バー（スマホ下／デスクトップ上） ---
+    // --- 追従バー（スマホ下／PC上） ---
     (function () {
       const bottom = document.getElementById('stickyBar');
       const top = document.getElementById('topbar');
